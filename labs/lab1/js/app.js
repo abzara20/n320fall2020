@@ -22,8 +22,12 @@ class raindrop {
 }
 
 class ground {
-    constructor(){
-    
+    //constructor for the ground class
+    constructor( xPos, yPos, height, width){
+        this.x = xPos;
+        this.y = yPos;
+        this.height = height;
+        this.width = width;
     }
 }
 
