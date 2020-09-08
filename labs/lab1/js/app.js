@@ -19,6 +19,8 @@ class raindrop {
     
      this.y = this.y + this.speed
 
+     //registers if the raindrop is on the same level as the ground and counts it
+     //as a "hit"
      if (this.y >= 500){
          this.y = 0;
          hitCount = hitCount + 1;
@@ -52,12 +54,14 @@ class Ground {
 
 //array to store the raindrops in
 let rainArray = [];
+//variable to collect the number of "hits"
 let hitCount = 0;
-let blueVal = 5;
-let floor = new Ground(0,500,800,200, blueVal);
+//variable to act as the ground
+let floor = new Ground(0,500,800,200,5);
 
 function setup(){
     createCanvas(800,600);
+    //creates 25 raindrop instances to act as rain
     for (i=0; i<25;i++) {
         rainArray[i] = new raindrop(random(0,800), 0) 
     }
