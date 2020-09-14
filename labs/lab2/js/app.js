@@ -14,6 +14,7 @@ class instrument{
     }
 }
 
+//child classes for the instrument class
 class woodwind extends instrument{
     constructor() {
         super("a quiet volume","oboe","performed");
