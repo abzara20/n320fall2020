@@ -1,4 +1,7 @@
+
+//parent class
 class instrument{
+
     constructor(loudness, family, verb){
         this.volume = loudness;
         this.family = family;
@@ -7,18 +10,24 @@ class instrument{
 
     //function to play the instrument
     play () {
-        
+        console.log("the " + family + " "+ verb + " at " + loudness);
     }
 }
 
-class woodwind{
-
+class woodwind extends instrument{
+    constructor() {
+        super("a quiet volume","oboe","blew");
+    }
 }
 
-class percussion{
-
+class percussion extends instrument{
+    constructor() {
+        super("a roar","snare","thrashed")
+    }
 }
 
-class string{
-
+class string extends instrument{
+    constructor() {
+        super();
+    }
 }
