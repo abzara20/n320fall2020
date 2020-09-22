@@ -1,3 +1,8 @@
+//ABril Zaragoza-Palos
+//9/22/2019
+//n320 Faas lab 3
+
+
 // let candyOne = {
 //     name = "Twix",
 //     stock = 14
@@ -26,6 +31,8 @@ class vendingMachine{
 
     }
 
+    //functions that removes one from the stock of items that have a
+    //stock greater than zero that the user chose
     vendCandyOne(){
         if (this.c1stock > 0){
             this.c1stock = this.c1stock - 1;
@@ -43,6 +50,7 @@ class vendingMachine{
     }
 
     render() {
+        //returns what will be put in the vending div on the actual page
         return `
         <table>
             <tr>
@@ -72,11 +80,18 @@ class vendingMachine{
     }
 };
 
+//creates a new vending machine instance
 let machine = new vendingMachine;
-console.log(machine.render());
+
+//test to make sure render displays properly
+// console.log(machine.render());
+
+//creates and displays the default render message
 let vendingDiv = document.getElementById("vending");
 vendingDiv.innerHTML = machine.render();
 
+//functions that when the button is clicked, the corrosponding item will 
+//lose one inventory stock and the display is updated
 function sellC1() {
     machine.vendCandyOne();
     vendingDiv.innerHTML = machine.render();
