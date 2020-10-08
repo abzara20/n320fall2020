@@ -8,16 +8,16 @@ h1 {
     width: 1000px;
 }
 
+#banner{
+    background-color: pink;
+    width: 1000px;
+    height: 200px;
+}
+
 .row{
     margin-top: 35px;
     display: flex;
     justify-content: center;
-}
-
-.banner{
-    background-color: pink;
-    width: 1000px;
-    height: 200px;
 }
 
 .boxes{
