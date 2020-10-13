@@ -3,6 +3,23 @@
 <body>
     <h1>Intro to Vue</h1>
 
+    <div id= "app">
+        {{message}}
+        <p>{{ purchases }} purchases</p>
+       
+        <ol>
+            <!-- <li v-for="coffee in coffees">{{ coffee }}</li> -->
+            <coffee-view 
+                v-for="coffee in coffees" 
+                v-bind:coffee = "coffee"
+                v-bind:key = "coffee.id">
+            </coffee-view>
+        </ol>
+
+        <span v-if ="ready">Buy Something?</span>
+        <button v-on:click="buyCoffee">Buy</button>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    
+    <script src="js/app.js"></script>
 </body>
