@@ -1,6 +1,9 @@
 <body>
 
     <div id = "app">
+        <discussion-view v-bind:message = "message">
+        </discussion-view>
+        
        <p> How are you?</p> </br>
         {{ words }}</br>
 
@@ -9,9 +12,7 @@
             <li v-for="greeting in greetings">{{greeting}}</li>
         </ul>
 
-        <discussion-view>
-            
-        </discussion-view>
+        
 
     </div>
 
