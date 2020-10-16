@@ -21,4 +21,3 @@ let app = new Vue({
         }   
     }
 });
-

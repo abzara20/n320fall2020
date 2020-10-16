@@ -1,7 +1,13 @@
 <body>
-
     <div id="app">
         
+        <book-view 
+            v-for = "book in books"
+            v-bind:book = "book"
+            v-bind:key = "book.id">
+        </book-view>
+
+        <button v-on:click = "showBook2">Show/Hide Book</button>        
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
