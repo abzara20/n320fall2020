@@ -16,12 +16,15 @@
         }
     </style>
 </head>
+
 <body>
+    <!-- header div -->
     <div> 
         <h3>Lab 6: Intro to Vue</h3>
         <a href="../../index.html" >Back to Home</a>  
     </div>
     
+    <!-- Vue App and component Html -->
     <div id="app">
         <div id = "bookWrapper">
             <book-view 
@@ -30,6 +33,7 @@
             v-bind:key = "book.id">
             </book-view>
         </div>
+        <!-- button that will call the method to show or hide the second book -->
         <button v-on:click = "showBook">Show/Hide Book</button>        
     </div>
 
