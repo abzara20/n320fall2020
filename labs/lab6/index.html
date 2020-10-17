@@ -1,13 +1,36 @@
+<head>
+    <style>
+        #bookWrapper{
+            display: flex;
+        }
+        .bookModel{
+            padding-top: 10px;
+            height:400px;
+            width:250px;
+            background-color: sienna;
+            text-align: center;
+            margin-left: 10px;
+        }
+        p{
+          font-size: 20px; 
+        }
+    </style>
+</head>
 <body>
+    <div> 
+        <h3>Lab 6: Intro to Vue</h3>
+        <a href="../../index.html" >Back to Home</a>  
+    </div>
+    
     <div id="app">
-        
-        <book-view 
+        <div id = "bookWrapper">
+            <book-view 
             v-for = "book in books"
             v-bind:book = "book"
             v-bind:key = "book.id">
-        </book-view>
-
-        <button v-on:click = "showBook2">Show/Hide Book</button>        
+            </book-view>
+        </div>
+        <button v-on:click = "showBook">Show/Hide Book</button>        
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
