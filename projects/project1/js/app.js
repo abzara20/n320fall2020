@@ -1,3 +1,7 @@
+
+let wrapper = document.getElementById("wrapper");
+TweenMax.from(wrapper, {duration:2.5, alpha:0, y: 200});
+
 class game{
     constructor(){
         this.playerTurn = 1;
