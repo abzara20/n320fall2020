@@ -8,6 +8,12 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
   }
+.tie{
+    background-color: lavender;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
   #wrapper{
     width: 450px;
     justify-content: center;

@@ -27,16 +27,16 @@ class game{
 
     winner(){
         for( let i = 0; i < boardArray.length; i++) {
+            
             //checks to see if the value has something other than 0
             if (boardArray[i] != 0) {
-
                 //checks to see if a player has won already
                 if (this.win == true){
 
                     // console.log("player " + winID + " won");
                     break;
 
-                } else {
+                } else{
 
                     //checks for horizontal wins
                     if (i == 0 || i == 3 || i == 6){
@@ -75,7 +75,16 @@ class game{
                             this.win = true;
                         }
                     }
+
                     //case for a tie
+                    if(turnCount >= 9) {
+                        if (this.win != true){
+                            console.log('tie');
+                            scoreboard.tieDisplay();
+
+                            this.win = true;
+                        }   
+                    }
                 }
             }
         }
@@ -129,7 +138,7 @@ class player extends game{
                         game.prototype.winner();
                     };
                 } else {
-                    console.log("no");
+                    window.alert('Please choose an unselected space');
                 }
                 
             });
@@ -145,6 +154,7 @@ class scoreBoard{
 
     //player one and two, and the respective colors
     //highlight player based on turn count
+    //display turn
     display(){
         
     }
@@ -161,6 +171,12 @@ class scoreBoard{
             this.score.classList.add('playerTwo');
         }
         this.score.innerHTML = "Player " + winID + " won by " + winMethod;
+    }
+
+    tieDisplay(){
+        console.log("tie")
+        this.score.classList.add('tie');
+        this.score.innerHTML = "There is no winner, there is a tie";
     }
 }
 
