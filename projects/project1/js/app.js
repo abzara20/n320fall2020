@@ -158,7 +158,7 @@ class scoreBoard{
             this.score.classList.add('playerOne');
         } 
         else if (winID == 2) {
-            
+            this.score.classList.add('playerTwo');
         }
         this.score.innerHTML = "Player " + winID + " won by " + winMethod;
     }
