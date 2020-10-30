@@ -27,7 +27,6 @@ class game{
 
                 //checks to see if a player has won already
                 if (this.win == true){
-                    winID = boardArray[i];
                     console.log("player " + winID + " won");
                     break;
                 } else {
@@ -36,13 +35,16 @@ class game{
                     if (i == 0 || i == 3 || i == 6){
                         if(boardArray[i] == boardArray[i+1] && boardArray[i] == boardArray[i+2]) {
                             console.log('H win');
+                            winID = boardArray[i];
                             this.win = true;
+
                         }
                     }
                     //checks for vertical wins
                     if (i == 0 || i == 1 || i == 2){
                         if(boardArray[i] == boardArray[i+3] && boardArray[i] == boardArray[i+6]) {
                             console.log('V win');
+                            winID = boardArray[i];
                             this.win = true;
                         }
                     }
@@ -50,6 +52,7 @@ class game{
                     if(i == 4){
                         if((boardArray[i] == boardArray[i-4] && boardArray[i] == boardArray[i+ 4]) || (boardArray[i] == boardArray[i-2] && boardArray[i] == boardArray[i+2]) ){
                             console.log('D win');
+                            winID = boardArray[i];
                             this.win = true;
                         }
                     }
