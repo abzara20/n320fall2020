@@ -3,6 +3,10 @@
 
 //small animation to make the tic tac toe board appear on load
 let wrapper = document.getElementById("wrapper");
+
+let p1display = document.getElementById("one");
+let p2display = document.getElementById("two");
+
 TweenMax.from(wrapper, {duration:2.5, alpha:0, y: 200});
 
 
@@ -107,33 +111,54 @@ class player extends game{
         for (let i = 0; i < this.svgVar.length; i++) {   
             //adding an event listener in order to add js 
             this.svgVar[i].addEventListener("click", function(event){
-
+                
                 //gets the attribute for selected square
                 this.selected = event.target.getAttribute('select');
 
                 //checks to see if the space is unselected
                 if (this.selected == 0){
+                    
+
                     //if the turn is even, player one makes a move
                     if (turnCount % 2 == 0){
+                        //animation on whose turn it is from mint to pink
+                        TweenMax.to(p2display, {duration:1, scale:1.1});
+                        TweenMax.to(p1display, {duration:1, scale: 1.0});
+
                         event.target.style.fill = "#77e6d3";
                         turnCount++;
                         boardArray[i] = 1;
-                        console.log('player 1 ' + this.selected);
+
+                        // console.log('player 1 ' + this.selected);
+
                         //changes the selected space from 0
                         event.target.setAttribute('select', 1);
 
+                        //updates the scoreboard
+                        scoreboard.display();
                         //calls the winner function to check if there is a possible winner
                         game.prototype.winner();
+
+                        
                     } 
                     //if the turn is odd, player two makes a move
                     else {
+
+                        //animation on whose turn it is from pink to mint
+                        TweenMax.to(p1display, {duration:1, scale:1.1});
+                        TweenMax.to(p2display, {duration:1, scale: 1.0});
+
                         event.target.style.fill = "#f7bed3";
                         turnCount++;
                         boardArray[i] = 2;
-                        console.log('player 2 ' + this.selected);
+
+                        // console.log('player 2 ' + this.selected);
 
                         //changes the selected space from 0
                         event.target.setAttribute('select', 1);
+
+                        //updates the scoreboard
+                        scoreboard.display();
                         //calls the winner function to check if there is a possible winner
                         game.prototype.winner();
                     };
@@ -150,13 +175,14 @@ class scoreBoard{
 
     constructor () {
         this.score = document.getElementById('scoreboard');
+        this.turn = document.getElementById('turn');
     }
 
     //player one and two, and the respective colors
     //highlight player based on turn count
     //display turn
     display(){
-        
+            this.turn.innerHTML = "Turn: " + (turnCount+1);
     }
 
     //display when there is a winner
