@@ -95,11 +95,8 @@ class game{
 
 //player class, who would take turns making a move
 class player extends game{
-    constructor(name, symbol, playerNum){
+    constructor(){
         super();
-        this.name = name;
-        this.symbol = symbol;
-        this.playerNum = playerNum;
         this.selected;
     }
 
