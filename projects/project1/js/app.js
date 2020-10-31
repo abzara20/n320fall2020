@@ -1,14 +1,12 @@
-
-
+//Abril Zaragoza-Palos Project 1
+//Faas N320 Fall 2020
 
 //small animation to make the tic tac toe board appear on load
 let wrapper = document.getElementById("wrapper");
-
 let p1display = document.getElementById("one");
 let p2display = document.getElementById("two");
 
 TweenMax.from(wrapper, {duration:2.5, alpha:0, y: 200});
-
 
 //count for turns
 let turnCount = 0;
@@ -52,7 +50,6 @@ class game{
                             scoreboard.winnerDisplay();
 
                             this.win = true;
-
                         }
                     }
                     //checks for vertical wins
@@ -117,8 +114,6 @@ class player extends game{
 
                 //checks to see if the space is unselected
                 if (this.selected == 0){
-                    
-
                     //if the turn is even, player one makes a move
                     if (turnCount % 2 == 0){
                         //animation on whose turn it is from mint to pink
@@ -128,7 +123,6 @@ class player extends game{
                         event.target.style.fill = "#77e6d3";
                         turnCount++;
                         boardArray[i] = 1;
-
                         // console.log('player 1 ' + this.selected);
 
                         //changes the selected space from 0
@@ -137,13 +131,11 @@ class player extends game{
                         //updates the scoreboard
                         scoreboard.display();
                         //calls the winner function to check if there is a possible winner
-                        game.prototype.winner();
-
-                        
+                        game.prototype.winner();  
                     } 
+                    
                     //if the turn is odd, player two makes a move
                     else {
-
                         //animation on whose turn it is from pink to mint
                         TweenMax.to(p1display, {duration:1, scale:1.1});
                         TweenMax.to(p2display, {duration:1, scale: 1.0});
@@ -151,7 +143,6 @@ class player extends game{
                         event.target.style.fill = "#f7bed3";
                         turnCount++;
                         boardArray[i] = 2;
-
                         // console.log('player 2 ' + this.selected);
 
                         //changes the selected space from 0
@@ -164,15 +155,13 @@ class player extends game{
                     };
                 } else {
                     window.alert('Please choose an unselected space');
-                }
-                
+                }  
             });
         }
     }
 }
 
 class scoreBoard{
-
     constructor () {
         this.score = document.getElementById('scoreboard');
         this.turn = document.getElementById('turn');
@@ -187,7 +176,6 @@ class scoreBoard{
 
     //display when there is a winner
     winnerDisplay(){
-
         // console.log(winMethod + " "+ winID);
         if (winID == 1){
             // console.log('playerOne')
